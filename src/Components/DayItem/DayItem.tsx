@@ -24,7 +24,7 @@ export const DayItem = ({ name, id }: DayItemprops) => {
       <div>
         <p className="titleDay">{name}</p>
       </div>
-      <div className="dayItem">
+      <div className="planItem">
         <div key={id}>
           <PlanList planList={planList} />
         </div>
