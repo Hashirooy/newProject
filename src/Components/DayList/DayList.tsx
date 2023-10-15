@@ -15,7 +15,7 @@ export const DayList = () => {
     <div className="dayListContainer">
       <div className="dayList">
         {day.map((day) => (
-          <DayItem name={day.name} id={day.id} />
+          <DayItem key={day.id} name={day.name} id={day.id} />
         ))}
       </div>
     </div>

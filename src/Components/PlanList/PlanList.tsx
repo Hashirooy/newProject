@@ -1,18 +1,18 @@
+import { PlanCard } from "../PlanCard/PlanCard";
 import { Plan } from "../Types";
 import "./PlanList.css";
 
 type PlanListProps = {
   planList: Plan[];
+  onEdit: (plan: Plan) => void;
+  onDelete: (plan: Plan) => void;
 };
 
-export const PlanList = ({ planList }: PlanListProps) => {
+export const PlanList = ({ planList, onEdit, onDelete }: PlanListProps) => {
   return (
     <div>
-      {planList.map((item) => (
-        <div className="planList">
-          <h2 className="planTitle">{item.name}</h2>
-          <p className="plan">{item.discription}</p>
-        </div>
+      {planList.map((plan) => (
+        <PlanCard plan={plan} onEdit={onEdit} onDelete={onDelete} />
       ))}
     </div>
   );

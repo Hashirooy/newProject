@@ -1,16 +1,16 @@
 import { useState } from "react";
 import { Plan } from "../Types/Plan";
-import "./PlanCreateForm.css";
-import { AddPlanButton } from "../AddPlanButton/AddPlanButton";
+import "./PlanForm.css";
 
 type PlanCreateFormProps = {
-  onCreate: (plan: Plan) => void;
+  plan?: Plan;
+  onSubmit: (plan: Plan) => void;
 };
 
-export const PlanCreateForm = ({ onCreate }: PlanCreateFormProps) => {
-  const [name, setName] = useState("");
-  const [discription, setDiscription] = useState("");
-  const [addPlan, setAddPlan] = useState(false);
+export const PlanForm = ({ onSubmit, plan }: PlanCreateFormProps) => {
+  const [name, setName] = useState(plan ? plan.name : "");
+  const [discription, setDiscription] = useState(plan ? plan.discription : "");
+  const [addPlan, setAddPlan] = useState(true);
 
   const onChangeInputName = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -26,30 +26,18 @@ export const PlanCreateForm = ({ onCreate }: PlanCreateFormProps) => {
 
   const onClickCreatePlan = (event: React.FormEvent) => {
     event.preventDefault();
-    const plan: Plan = {
-      id: String(Math.floor(Math.random() * 101)),
+    const planCard: Plan = {
+      id: plan ? plan.id : String(Math.floor(Math.random() * 101)),
       name,
       discription,
     };
-    onCreate(plan);
+    onSubmit(planCard);
     setName(" ");
     setDiscription(" ");
   };
 
-  const onClickAddPlan = () => {
-    if (addPlan === false) {
-      setAddPlan(true);
-    }
-    if (addPlan === true) {
-      setAddPlan(false);
-    }
-  };
-
   return (
     <div className="planCreateForm">
-      <button className="addPlanButton" onClick={onClickAddPlan}>
-        Add Plan
-      </button>
       {addPlan && (
         <div className="createForm">
           <form className="createFormElement">
