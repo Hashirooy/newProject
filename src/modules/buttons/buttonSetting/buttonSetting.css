@@ -1,0 +1,14 @@
+.buttonSetting {
+  border-radius: 7px;
+  color: #596180;
+  font-size: 15px;
+  background: #f7f9fd;
+  padding: 5px 20px 5px 20px;
+  text-decoration: none;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.buttonSetting:hover {
+  opacity: 0.2;
+}

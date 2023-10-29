@@ -24,7 +24,7 @@ export const PlanForm = ({ onSubmit, plan }: PlanCreateFormProps) => {
     setDiscription(value);
   };
 
-  const onClickCreatePlan = (event: React.FormEvent) => {
+  const onClickPlan = (event: React.FormEvent) => {
     event.preventDefault();
     const planCard: Plan = {
       id: plan ? plan.id : String(Math.floor(Math.random() * 101)),
@@ -55,7 +55,7 @@ export const PlanForm = ({ onSubmit, plan }: PlanCreateFormProps) => {
             />
             <button
               type="submit"
-              onClick={onClickCreatePlan}
+              onClick={onClickPlan}
               className="createPlanButton"
             >
               Create Plan

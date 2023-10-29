@@ -1,0 +1,14 @@
+.ButtonFilter {
+  border-radius: 7px;
+  color: #596180;
+  font-size: 13px;
+  background: #f7f9fd;
+  padding: 1px 20px 1px 20px;
+  text-decoration: none;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+.ButtonFilter:hover {
+  opacity: 0.2;
+}

@@ -1,0 +1,34 @@
+.sort {
+  padding: 10px 0 10px 0;
+  background-color: #eaebf2;
+  width: 90px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.squaeres {
+  background-image: url("./squares.png");
+  background-size: cover;
+  border: none;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.list {
+  background-image: url("./list.png");
+  background-size: cover;
+  border: none;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.list:hover {
+  opacity: 0.2;
+}
+
+.squaeres:hover {
+  opacity: 0.2;
+}
