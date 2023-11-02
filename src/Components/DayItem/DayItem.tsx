@@ -19,8 +19,6 @@ export const DayItem = ({ name, id }: DayItemprops) => {
   };
 
   const onEdit = (plan: Plan) => {
-    console.log(planList);
-    console.log(plan);
     return setPlanList(
       planList.map((item) => (item.id === plan.id ? plan : item))
     );

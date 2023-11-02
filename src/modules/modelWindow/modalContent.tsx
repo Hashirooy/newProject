@@ -1,24 +1,22 @@
-import { useState } from "react";
 import "./modalContent.css";
+import { PlanCreateForm } from "../planCreateForm/planCreateForm";
+import { Plan } from "../Types";
 
 type ModalContentProps = {
   onClose: () => void;
+  createPlan: (plan: Plan) => void;
 };
 
-export const ModalContent = ({ onClose }: ModalContentProps) => {
-  const [inputValue, setInputValue] = useState("");
-
-  const OnChangeInputValue = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setInputValue(value);
-  };
+export const ModalContent = ({ onClose, createPlan }: ModalContentProps) => {
   return (
     <div className="modal">
-      <div>
-        <p>Choose a day:</p>
-        <input type="text" value={inputValue} onChange={OnChangeInputValue} />
+      <div className="modal-form">
+        <h3>Plan create form</h3>
+        <PlanCreateForm createPlan={createPlan} />
       </div>
-      <button onClick={onClose}>Close</button>
+      <button onClick={onClose} className="closeButton">
+        Close
+      </button>
     </div>
   );
 };

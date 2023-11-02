@@ -1,16 +1,25 @@
-import { ButtonAddPlan } from "../buttons/buttonAddPlan/butttonAddPlan";
+import { useState } from "react";
+import { Plan } from "../Types";
 import { ButtonFilter } from "../buttons/buttonFilter/buttonFilter";
 import { ButtonSetting } from "../buttons/buttonSetting/buttonSetting";
 import { ButtonSort } from "../buttons/buttonSort/buttonSort";
 import { PortalExample } from "../modelWindow/modelWindow";
 import "./filter.css";
 
-export const Filter = () => {
+type FilterProps = {
+  createPlan: (plan: Plan) => void;
+  plan: Plan[];
+};
+
+export const Filter = ({ createPlan, plan }: FilterProps) => {
   return (
     <div className="filter">
       <div className="filter__content">
-        <h1>DEALS</h1>
-        <PortalExample />
+        <div className="filter__deals">
+          <h1>Deals</h1>
+          <p className="numDeals">{plan.length}</p>
+        </div>
+        <PortalExample createPlan={createPlan} />
       </div>
       <div className="filter__tools">
         <div className="filter__tools-tags">

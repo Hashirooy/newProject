@@ -1,5 +1,4 @@
 import "./App.css";
-import { Day } from "./modules/day/day";
 import { Header } from "./modules/header/header";
 import { Layout } from "./modules/layout/layout";
 import { Page } from "./modules/page/page";

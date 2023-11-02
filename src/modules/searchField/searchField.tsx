@@ -8,10 +8,12 @@ export const SearchField = () => {
     setSearchValue(value);
   };
   return (
-    <input
-      className="searchField"
-      value={searchValur}
-      onChange={onChangeSeach}
-    ></input>
+    <div className="searchField">
+      <input
+        className="searchField"
+        value={searchValur}
+        onChange={onChangeSeach}
+      ></input>
+    </div>
   );
 };

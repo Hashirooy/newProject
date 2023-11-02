@@ -1,4 +1,4 @@
-export type dayType = {
+export type DayType = {
   name: string;
   id: string;
 };

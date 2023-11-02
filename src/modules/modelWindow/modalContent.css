@@ -1,8 +1,8 @@
 .modal {
   background-color: #ffff;
   position: absolute;
-  width: 200px;
-  height: 100px;
+  width: 250px;
+  height: 300px;
   top: 120px;
   left: 1610px;
   border-radius: 7px;
@@ -10,4 +10,31 @@
   box-shadow: -8px 14px 5px -2px rgba(0, 0, 0, 0.31);
   -webkit-box-shadow: -8px 14px 5px -2px rgba(0, 0, 0, 0.31);
   -moz-box-shadow: -8px 14px 5px -2px rgba(0, 0, 0, 0.31);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.closeButton {
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #4d66c3;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 0px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  opacity: 0.2;
 }

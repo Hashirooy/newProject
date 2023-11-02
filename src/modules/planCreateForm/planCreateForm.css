@@ -1,0 +1,32 @@
+.createPlanForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.createButton {
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #4d66c3;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 0px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.createButton:hover {
+  opacity: 0.2;
+}
+
+.searchFieldForm {
+  width: 200px;
+  height: 35px;
+  border-radius: 7px;
+  background-color: #f2f6fa;
+  border: 2px solid #eff3f8;
+  color: #181a24;
+}
