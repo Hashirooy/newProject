@@ -1,0 +1,24 @@
+.optionButtons {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.optionButtons_buttons {
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  background: #4d66c3;
+  padding: 10px 20px 10px 20px;
+  border: solid #1f628d 0px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.optionButtons_buttons:hover {
+  opacity: 0.2;
+}

@@ -3,14 +3,14 @@ import "./planCreateForm.css";
 import { Day, Plan } from "../Types";
 
 type PlanCreateFormProps = {
-  plan?: Plan[];
+  plan?: Plan;
   createPlan: (plan: Plan) => void;
 };
 
 export const PlanCreateForm = ({ plan, createPlan }: PlanCreateFormProps) => {
-  const [description, setDiscription] = useState("");
-  const [name, setName] = useState("");
-  const [day, setDay] = useState<Day>("Monday");
+  const [description, setDiscription] = useState(plan ? plan.description : "");
+  const [name, setName] = useState(plan ? plan.name : "");
+  const [day, setDay] = useState<Day>(plan ? plan.day : "Monday");
 
   const OnChangeInputDescription = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -28,7 +28,7 @@ export const PlanCreateForm = ({ plan, createPlan }: PlanCreateFormProps) => {
     event.preventDefault();
     if (!description) return;
     const planCard: Plan = {
-      id: String(Math.floor(Math.random() * 101)),
+      id: plan ? plan.id : String(Math.floor(Math.random() * 101)),
       name,
       description,
       day,
@@ -50,16 +50,16 @@ export const PlanCreateForm = ({ plan, createPlan }: PlanCreateFormProps) => {
       </select>
       <input
         type="text"
-        value={description}
+        value={name}
         placeholder="Name"
-        onChange={OnChangeInputDescription}
+        onChange={OnChangeInputName}
         className="searchFieldForm"
       />
       <input
         type="text"
-        value={name}
+        value={description}
         placeholder="Description"
-        onChange={OnChangeInputName}
+        onChange={OnChangeInputDescription}
         className="searchFieldForm"
       />
       <button onClick={onClickPlan} className="createButton">

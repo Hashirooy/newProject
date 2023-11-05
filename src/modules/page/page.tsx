@@ -10,6 +10,13 @@ export const Page = () => {
   const createPlan = (plan: Plan) => {
     setPlan((planList) => [...planList, plan]);
   };
+  const onEdit = (plan: Plan) => {
+    return setPlan(planList.map((item) => (item.id === plan.id ? plan : item)));
+  };
+
+  const onDelete = (plan: Plan) => {
+    return setPlan(planList.filter((item) => item.id !== plan.id));
+  };
   return (
     <div className="page">
       <div className="page__filter">
@@ -22,6 +29,8 @@ export const Page = () => {
             <Day
               day={day}
               key={day.id}
+              onEdit={onEdit}
+              onDelete={onDelete}
               planList={planList.filter((plan) => plan.day === day.name)}
             />
           ))}
