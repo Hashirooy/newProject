@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "./planCreateForm.css";
 import { Day, Plan } from "../Types";
+import { PlanActions } from "../plan/actions";
 
 type PlanCreateFormProps = {
   plan?: Plan;
-  createPlan: (plan: Plan) => void;
 };
 
-export const PlanCreateForm = ({ plan, createPlan }: PlanCreateFormProps) => {
+export const PlanCreateForm = ({ plan }: PlanCreateFormProps) => {
   const [description, setDiscription] = useState(plan ? plan.description : "");
   const [name, setName] = useState(plan ? plan.name : "");
   const [day, setDay] = useState<Day>(plan ? plan.day : "Monday");
@@ -33,7 +33,7 @@ export const PlanCreateForm = ({ plan, createPlan }: PlanCreateFormProps) => {
       description,
       day,
     };
-    createPlan(planCard);
+    PlanActions.createPlan(planCard);
     setDiscription("");
     setName("");
   };

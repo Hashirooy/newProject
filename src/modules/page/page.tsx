@@ -7,32 +7,26 @@ import { DayOptions, Plan } from "../Types";
 
 export const Page = () => {
   const [planList, setPlan] = useState<Plan[]>([]);
-  const createPlan = (plan: Plan) => {
-    setPlan((planList) => [...planList, plan]);
-  };
-  const onEdit = (plan: Plan) => {
-    return setPlan(planList.map((item) => (item.id === plan.id ? plan : item)));
-  };
+  // const createPlan = (plan: Plan) => {
+  //   setPlan((planList) => [...planList, plan]);
+  // };
+  // const onEdit = (plan: Plan) => {
+  //   return setPlan(planList.map((item) => (item.id === plan.id ? plan : item)));
+  // };
 
-  const onDelete = (plan: Plan) => {
-    return setPlan(planList.filter((item) => item.id !== plan.id));
-  };
+  // const onDelete = (plan: Plan) => {
+  //   return setPlan(planList.filter((item) => item.id !== plan.id));
+  // };
   return (
     <div className="page">
       <div className="page__filter">
-        <Filter createPlan={createPlan} plan={planList} />
+        <Filter plan={planList} />
       </div>
       <div className="page__kanban">
         <div className="page__kanban-settings"></div>
         <div className="page__kanban-days">
           {dayArr.map((day) => (
-            <Day
-              day={day}
-              key={day.id}
-              onEdit={onEdit}
-              onDelete={onDelete}
-              planList={planList.filter((plan) => plan.day === day.name)}
-            />
+            <Day day={day} key={day.id} />
           ))}
         </div>
       </div>

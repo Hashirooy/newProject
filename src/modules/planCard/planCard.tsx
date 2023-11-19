@@ -3,26 +3,23 @@ import { Plan } from "../Types";
 import { PlanCreateForm } from "../planCreateForm/planCreateForm";
 
 import "./planCard.css";
+import { PlanActions } from "../plan/actions";
 
 type PlanCardPropd = {
   plan: Plan;
-  onEdit: (plan: Plan) => void;
-  onDelete: (plan: Plan) => void;
 };
 
-export const PlanCard = ({ plan, onEdit, onDelete }: PlanCardPropd) => {
+export const PlanCard = ({ plan }: PlanCardPropd) => {
   const [edit, setEdit] = useState(false);
 
-  const onDoubleClick = () => {
-    setEdit((editPrev) => !edit);
-  };
+  const onDoubleClick = () => setEdit((editPrev) => !edit);
 
   const closeWinwod = () => {
     setEdit((editPrev) => !edit);
   };
 
   const onDeleteButton = () => {
-    onDelete(plan);
+    PlanActions.deletePlan(plan);
   };
 
   return (
@@ -41,7 +38,7 @@ export const PlanCard = ({ plan, onEdit, onDelete }: PlanCardPropd) => {
       )}
       {edit === true && (
         <div>
-          <PlanCreateForm plan={plan} createPlan={onEdit} />
+          <PlanCreateForm plan={plan} />
           <div className="optionButtons">
             <button className="optionButtons_buttons" onClick={closeWinwod}>
               Х

@@ -1,22 +1,23 @@
 import "./modalContent.css";
 import { PlanCreateForm } from "../planCreateForm/planCreateForm";
 import { Plan } from "../Types";
+import { ModalWindow } from "./modalWindow";
 
 type ModalContentProps = {
   onClose: () => void;
-  createPlan: (plan: Plan) => void;
+  showModal: boolean;
 };
 
-export const ModalContent = ({ onClose, createPlan }: ModalContentProps) => {
+export const ModalContent = ({ onClose, showModal }: ModalContentProps) => {
   return (
-    <div className="modal">
+    <ModalWindow showModal={showModal}>
       <div className="modal-form">
         <h3>Plan create form</h3>
-        <PlanCreateForm createPlan={createPlan} />
+        <PlanCreateForm />
       </div>
       <button onClick={onClose} className="closeButton">
         Close
       </button>
-    </div>
+    </ModalWindow>
   );
 };

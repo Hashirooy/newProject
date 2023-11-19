@@ -3,13 +3,11 @@ import { createPortal } from "react-dom";
 import { ModalContent } from "./modalContent";
 import { Plan } from "../Types";
 
-import "./modelWindow.css";
+import "./PortalExample.css";
 
-type PortalExampleProps = {
-  createPlan: (plan: Plan) => void;
-};
+type PortalExampleProps = {};
 
-export const PortalExample = ({ createPlan }: PortalExampleProps) => {
+export const PortalExample = () => {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
@@ -20,7 +18,7 @@ export const PortalExample = ({ createPlan }: PortalExampleProps) => {
         createPortal(
           <ModalContent
             onClose={() => setShowModal(false)}
-            createPlan={createPlan}
+            showModal={showModal}
           />,
           document.body
         )}

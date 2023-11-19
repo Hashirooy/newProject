@@ -3,7 +3,7 @@ import { Plan } from "../Types";
 import { ButtonFilter } from "../buttons/buttonFilter/buttonFilter";
 import { ButtonSetting } from "../buttons/buttonSetting/buttonSetting";
 import { ButtonSort } from "../buttons/buttonSort/buttonSort";
-import { PortalExample } from "../modelWindow/modelWindow";
+import { PortalExample } from "../modelWindow/PortalExample";
 import "./filter.css";
 
 type FilterProps = {
