@@ -14,16 +14,24 @@ export const createPlan = (plan: Plan.Plan) => {
 };
 
 export const updatePlan = (plan: Plan.Plan) => {
-  const planList = usePlanStore((state) => {
-    const list = selectModelList(state);
-    return list.map((item) => (item.id === plan.id ? plan : item));
+  usePlanStore.setState((prev) => {
+    return {
+      ...prev,
+      model: {
+        ...prev.model,
+        [plan.id]: plan,
+      },
+    };
   });
 };
 
 export const deletePlan = (plan: Plan.Plan) => {
-  const planList = usePlanStore((state) => {
-    const list = selectModelList(state);
-    list.filter((item) => item.id !== plan.id);
+  usePlanStore.setState((prev) => {
+    const { [plan.id]: toDelete, ...rest } = prev.model;
+    return {
+      ...prev,
+      model: rest,
+    };
   });
 };
 

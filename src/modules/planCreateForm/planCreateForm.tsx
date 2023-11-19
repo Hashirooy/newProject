@@ -12,6 +12,8 @@ export const PlanCreateForm = ({ plan }: PlanCreateFormProps) => {
   const [name, setName] = useState(plan ? plan.name : "");
   const [day, setDay] = useState<Day>(plan ? plan.day : "Monday");
 
+  let isCreateion = !plan;
+
   const OnChangeInputDescription = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -33,7 +35,13 @@ export const PlanCreateForm = ({ plan }: PlanCreateFormProps) => {
       description,
       day,
     };
-    PlanActions.createPlan(planCard);
+
+    if (isCreateion) {
+      PlanActions.createPlan(planCard);
+    } else {
+      PlanActions.updatePlan(planCard);
+    }
+
     setDiscription("");
     setName("");
   };

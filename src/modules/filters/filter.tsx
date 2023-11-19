@@ -7,11 +7,10 @@ import { PortalExample } from "../modelWindow/PortalExample";
 import "./filter.css";
 
 type FilterProps = {
-  createPlan: (plan: Plan) => void;
   plan: Plan[];
 };
 
-export const Filter = ({ createPlan, plan }: FilterProps) => {
+export const Filter = ({ plan }: FilterProps) => {
   return (
     <div className="filter">
       <div className="filter__content">
@@ -19,7 +18,7 @@ export const Filter = ({ createPlan, plan }: FilterProps) => {
           <h1>Deals</h1>
           <p className="numDeals">{plan.length}</p>
         </div>
-        <PortalExample createPlan={createPlan} />
+        <PortalExample />
       </div>
       <div className="filter__tools">
         <div className="filter__tools-tags">
