@@ -72,7 +72,7 @@ export const PlanCreateForm = ({ plan }: PlanCreateFormProps) => {
         className="searchFieldForm"
       />
       <button onClick={onClickPlan} className="createButton">
-        Create plan
+        {isCreateion ? "Create plan" : "Update plan"}
       </button>
     </form>
   );
