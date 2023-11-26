@@ -4,11 +4,11 @@ import { PlanSelector } from "../../plan";
 import { selectModelList } from "../../plan/selectors/PlanSelector";
 
 export const ButtonFilter = () => {
-  const list = usePlanStore((state) => selectModelList(state));
-  const click = () => {
-    console.log(list);
-  };
+  const getPlanList = usePlanStore((state) => state.actions.getPlanList);
 
+  const click = () => {
+    console.log(getPlanList());
+  };
   return (
     <button className="ButtonFilter" onClick={click}>
       Filter

@@ -35,7 +35,13 @@ export const deletePlan = (plan: Plan.Plan) => {
   });
 };
 
-export const getPlanList = () => {
-  const planList = usePlanStore((state) => selectModelList(state));
-  return planList;
+export const reoderPlan = (plan: Plan.Plan) => {
+  usePlanStore.setState((prev) => {
+    return {
+      ...prev,
+      model: {
+        plan,
+      },
+    };
+  });
 };

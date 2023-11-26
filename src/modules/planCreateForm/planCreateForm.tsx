@@ -29,6 +29,7 @@ export const PlanCreateForm = ({ plan }: PlanCreateFormProps) => {
   const onClickPlan = (event: React.FormEvent) => {
     event.preventDefault();
     if (!description) return;
+
     const planCard: Plan = {
       id: plan ? plan.id : String(Math.floor(Math.random() * 101)),
       name,

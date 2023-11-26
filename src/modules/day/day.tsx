@@ -5,6 +5,8 @@ import { PlanList } from "../planList/planList";
 import { usePlanStore } from "../plan";
 import { selectListByDay } from "../plan/selectors/PlanSelector";
 
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+
 type DayProps = {
   day: DayType;
 };
@@ -16,7 +18,7 @@ export const Day = ({ day }: DayProps) => {
     <div className="day">
       <h2>{day.name}</h2>
       <div className="day__planList">
-        <PlanList plan={planList} />
+        <PlanList plan={planList} day={day} />
       </div>
     </div>
   );
