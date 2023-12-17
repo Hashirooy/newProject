@@ -1,18 +1,18 @@
-import { useState } from "react";
-import { Plan } from "../Types";
+import { useState, memo } from "react";
 import { PlanCreateForm } from "../planCreateForm/planCreateForm";
 import "./planCard.css";
-import { PlanActions } from "../plan/actions";
-import { usePlanStore } from "../plan";
+import { PlanActions } from "../../actions";
+import { usePlanStore } from "../..";
 
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { Plan } from "../../core/Plan";
 
 type PlanCardPropd = {
   plan: Plan;
   index: number;
 };
 
-export const PlanCard = ({ plan, index }: PlanCardPropd) => {
+export const PlanCard = memo(({ plan, index }: PlanCardPropd) => {
   const [edit, setEdit] = useState(false);
   const deletePlan = usePlanStore((state) => state.actions.deletePlan);
 
@@ -69,4 +69,4 @@ export const PlanCard = ({ plan, index }: PlanCardPropd) => {
       )}
     </Draggable>
   );
-};
+});

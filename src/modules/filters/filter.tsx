@@ -5,18 +5,21 @@ import { ButtonSetting } from "../buttons/buttonSetting/buttonSetting";
 import { ButtonSort } from "../buttons/buttonSort/buttonSort";
 import { PortalExample } from "../modelWindow/PortalExample";
 import "./filter.css";
+import { selectNumberOfPlans } from "../plan/selectors/PlanSelector";
+import { usePlanStore } from "../plan";
 
 type FilterProps = {
   plan: Plan[];
 };
 
 export const Filter = ({ plan }: FilterProps) => {
+  const numberOfPlans = usePlanStore((state) => selectNumberOfPlans(state));
   return (
     <div className="filter">
       <div className="filter__content">
         <div className="filter__deals">
           <h1>Deals</h1>
-          <p className="numDeals">{plan.length}</p>
+          <p className="numDeals">{numberOfPlans}</p>
         </div>
         <PortalExample />
       </div>

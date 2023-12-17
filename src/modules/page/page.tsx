@@ -3,7 +3,8 @@ import { Filter } from "../filters/filter";
 import "./page.css";
 import { useState } from "react";
 
-import { DayOptions, Plan } from "../Types";
+import { DayOptions } from "../Types";
+import { Plan } from "../plan/core/Plan";
 
 export const Page = () => {
   const [planList, setPlan] = useState<Plan[]>([]);

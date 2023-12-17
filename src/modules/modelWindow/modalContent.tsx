@@ -1,6 +1,6 @@
 import "./modalContent.css";
-import { PlanCreateForm } from "../planCreateForm/planCreateForm";
-import { Plan } from "../Types";
+import { PlanCreateForm } from "../plan/ui/planCreateForm/planCreateForm";
+import { Plan } from "../plan/core/Plan";
 import { ModalWindow } from "./modalWindow";
 
 type ModalContentProps = {

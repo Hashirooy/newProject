@@ -1,7 +1,10 @@
 import { useState } from "react";
 import "./planCreateForm.css";
-import { Day, Plan } from "../Types";
-import { PlanActions } from "../plan/actions";
+import { Day } from "../../../Types";
+import { PlanActions } from "../../actions";
+import { usePlanStore } from "../..";
+import { selectMaxOrder } from "../../selectors/PlanSelector";
+import { Plan } from "../../core/Plan";
 
 type PlanCreateFormProps = {
   plan?: Plan;
@@ -11,6 +14,8 @@ export const PlanCreateForm = ({ plan }: PlanCreateFormProps) => {
   const [description, setDiscription] = useState(plan ? plan.description : "");
   const [name, setName] = useState(plan ? plan.name : "");
   const [day, setDay] = useState<Day>(plan ? plan.day : "Monday");
+
+  const planMaxorder = usePlanStore((state) => selectMaxOrder(state, day));
 
   let isCreateion = !plan;
 
@@ -31,10 +36,11 @@ export const PlanCreateForm = ({ plan }: PlanCreateFormProps) => {
     if (!description) return;
 
     const planCard: Plan = {
-      id: plan ? plan.id : String(Math.floor(Math.random() * 101)),
+      id: plan ? plan.id : String(Math.random()),
       name,
       description,
       day,
+      order: plan ? plan.order : planMaxorder,
     };
 
     if (isCreateion) {

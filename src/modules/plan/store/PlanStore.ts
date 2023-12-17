@@ -11,13 +11,21 @@ export type PlanState = {
   };
 };
 
-export const usePlanStore = create<PlanState>((set, get) => ({
-  model: {},
-  actions: {
-    deletePlan: (planId) => {
-      const { [planId]: toDelete, ...rest } = get().model;
-      set({ model: rest });
-    },
-    getPlanList: () => Object.values(get().model),
-  },
-}));
+export const usePlanStore = create<PlanState>()(
+  persist(
+    (set, get) => ({
+      model: {},
+      actions: {
+        deletePlan: (planId) => {
+          const { [planId]: toDelete, ...rest } = get().model;
+          set({ model: rest });
+        },
+        getPlanList: () => Object.values(get().model),
+      },
+    }),
+    {
+      name: "plan-storage", // name of the item in the storage (must be unique)
+      storage: createJSONStorage(() => sessionStorage), // (optional) by default, 'localStorage' is used
+    }
+  )
+);

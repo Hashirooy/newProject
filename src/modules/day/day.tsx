@@ -1,7 +1,7 @@
 import "./day.css";
 import { DayType } from "./dayType";
-import { Plan } from "../Types";
-import { PlanList } from "../planList/planList";
+import { Plan } from "../plan";
+import { PlanList } from "../plan/ui/planList/planList";
 import { usePlanStore } from "../plan";
 import { selectListByDay } from "../plan/selectors/PlanSelector";
 
