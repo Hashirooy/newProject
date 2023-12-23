@@ -1,0 +1,24 @@
+.sidebar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar__logo {
+  width: 100%;
+  height: 60px;
+}
+
+.sidebar__options {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sidebar__options > div {
+  width: 100%;
+  height: 60px;
+}

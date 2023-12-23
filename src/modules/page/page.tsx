@@ -24,7 +24,13 @@ export const Page = () => {
         <Filter plan={planList} />
       </div>
       <div className="page__kanban">
-        <div className="page__kanban-settings"></div>
+        <div className="page__kanban-settings">
+          <div>Evaluation</div>
+          <div>Evaluation today</div>
+          <div>Documents</div>
+          <div>Work</div>
+          <div>Thinking</div>
+        </div>
         <div className="page__kanban-days">
           {dayArr.map((day) => (
             <Day day={day} key={day.id} />

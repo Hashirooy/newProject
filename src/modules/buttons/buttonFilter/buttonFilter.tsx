@@ -11,6 +11,7 @@ export const ButtonFilter = () => {
   };
   return (
     <button className="ButtonFilter" onClick={click}>
+      <img src="src\assets\filer.svg" />
       Filter
     </button>
   );

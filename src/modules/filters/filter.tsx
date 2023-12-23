@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plan } from "../Types";
+import { Plan } from "../plan/core/Plan";
 import { ButtonFilter } from "../buttons/buttonFilter/buttonFilter";
 import { ButtonSetting } from "../buttons/buttonSetting/buttonSetting";
 import { ButtonSort } from "../buttons/buttonSort/buttonSort";
@@ -18,10 +18,19 @@ export const Filter = ({ plan }: FilterProps) => {
     <div className="filter">
       <div className="filter__content">
         <div className="filter__deals">
-          <h1>Deals</h1>
+          <h1 id="QAdeals">Deals</h1>
           <p className="numDeals">{numberOfPlans}</p>
         </div>
-        <PortalExample />
+        <div className="filter__intr">
+          <div className="filter__fotos">
+            <img className="foto1" src="src\assets\fotka.jpg" alt="" />
+            <img className="foto2" src="src\assets\foto2.jpg" alt="" />
+            <img className="foto3" src="src\assets\foto1.jpg" alt="" />
+            <img className="foto4" src="src\assets\foto3.jpg" alt="" />
+            <img className="foto5" src="src\assets\foto2.jpg" alt="" />
+          </div>
+          <PortalExample />
+        </div>
       </div>
       <div className="filter__tools">
         <div className="filter__tools-tags">

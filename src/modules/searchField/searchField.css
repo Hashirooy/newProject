@@ -5,4 +5,17 @@
   background-color: #f2f6fa;
   border: 2px solid #eff3f8;
   color: #181a24;
+  padding-left: 30px;
+}
+
+.search {
+  position: relative;
+}
+.searchField--icon {
+  position: absolute;
+  left: 5px;
+  top: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,12 +1,15 @@
 .ButtonFilter {
+  border: none;
   border-radius: 7px;
-  color: #596180;
-  font-size: 13px;
-  background: #f7f9fd;
-  padding: 1px 20px 1px 20px;
-  text-decoration: none;
-  border: 1px solid gray;
+  width: 80px;
+  height: 40px;
+  padding: 0px 10px 0px 10px;
+  background-color: #f7f9fd;
   cursor: pointer;
+  color: #1c274c;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .ButtonFilter:hover {

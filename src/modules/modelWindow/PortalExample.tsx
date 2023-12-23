@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { createPortal } from "react-dom";
 import { ModalContent } from "./modalContent";
-import { Plan } from "../Types";
+import { Plan } from "../plan/core/Plan";
 
 import "./PortalExample.css";
 
