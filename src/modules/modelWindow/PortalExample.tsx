@@ -12,6 +12,7 @@ export const PortalExample = () => {
   return (
     <>
       <button className="addPlanButton" onClick={() => setShowModal(true)}>
+        <img src="src\assets\plus.svg" />
         Add plan
       </button>
       {showModal &&

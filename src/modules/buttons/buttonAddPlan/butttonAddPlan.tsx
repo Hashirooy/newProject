@@ -6,7 +6,6 @@ export const ButtonAddPlan = () => {
   };
   return (
     <button className="buttonAddPlan" onClick={ButtonAddPlanClick}>
-      <img src="src\assets\plus.svg" />
       Add Plan
     </button>
   );

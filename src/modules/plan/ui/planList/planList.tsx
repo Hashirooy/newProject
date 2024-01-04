@@ -1,10 +1,12 @@
 import { PlanCard } from "../planCard/planCard";
 
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 
 import { DayType } from "../../../day/dayType";
 import { reoderPlan } from "../../actions/PlanActions";
 import { Plan } from "../../core/Plan";
+
+import "./planList.css";
 
 type PlanListProps = {
   plan: Plan[];
@@ -23,7 +25,12 @@ export const PlanList = ({ plan, day }: PlanListProps) => {
     <DragDropContext onDragEnd={HandleDragDrop}>
       <Droppable droppableId="ROOT" type="group">
         {(provided) => (
-          <div {...provided.droppableProps} ref={provided.innerRef}>
+          <div
+            className="planList"
+            id="data-test-list"
+            {...provided.droppableProps}
+            ref={provided.innerRef}
+          >
             {plan
               .sort((a, b) => a.order - b.order)
               .map((planCard, index) => (

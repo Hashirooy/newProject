@@ -15,9 +15,10 @@
   margin-right: 40px;
 }
 
-.account--tools {
+.account__tools {
+  display: flex;
   margin-right: 20px;
-  gap: 20px;
+  gap: 80px;
 }
 
 .account--line {
@@ -26,19 +27,30 @@
   margin-right: 20px;
 }
 
-.account--foto img {
+.account__options img {
   border-radius: 50%;
   height: 40px;
   width: 40px;
+  object-fit: cover;
 }
 
-.account--options {
+.account__options {
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #1c274c;
   font-size: 10px;
 }
-.account--data {
+.account__data {
   padding-left: 10px;
+}
+
+.account__data--FIO {
+  color: #202633;
+  font-size: 16px;
+}
+
+.account__data--position {
+  color: #9096aa;
+  font-size: 15px;
 }

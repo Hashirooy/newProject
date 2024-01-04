@@ -1,0 +1,9 @@
+.deals {
+  display: flex;
+  margin: 10px 0px 0px 10px;
+}
+.deals--numDeals {
+  color: #adadc2;
+  font-size: 25px;
+  padding: 5px 0px 0px 10px;
+}

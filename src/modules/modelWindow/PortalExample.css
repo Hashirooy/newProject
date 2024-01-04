@@ -1,16 +1,18 @@
 .addPlanButton {
-  -webkit-border-radius: 8;
-  -moz-border-radius: 8;
+  display: flex;
   border-radius: 8px;
   font-family: Arial;
   color: #ffffff;
-  height: 40px;
+  height: 45px;
+  width: 120px;
   font-size: 15px;
   background: #4d66c3;
-  padding: 10px 20px 10px 20px;
   border: solid #1f628d 0px;
   text-decoration: none;
   cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .addPlanButton:hover {

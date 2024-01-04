@@ -8,6 +8,8 @@
 .sidebar__logo {
   width: 100%;
   height: 60px;
+  border-bottom: 2px solid #f1f1f6;
+  padding: 5px 0 0 15px;
 }
 
 .sidebar__options {
@@ -21,4 +23,9 @@
 .sidebar__options > div {
   width: 100%;
   height: 60px;
+}
+
+.sidebar__Navigation {
+  width: 100%;
+  height: 100%;
 }

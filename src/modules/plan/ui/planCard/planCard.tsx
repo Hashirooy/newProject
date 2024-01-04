@@ -4,7 +4,7 @@ import "./planCard.css";
 import { PlanActions } from "../../actions";
 import { usePlanStore } from "../..";
 
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import { Plan } from "../../core/Plan";
 
 type PlanCardPropd = {
@@ -14,10 +14,23 @@ type PlanCardPropd = {
 
 export const PlanCard = memo(({ plan, index }: PlanCardPropd) => {
   const [edit, setEdit] = useState(false);
+  const [down, setDown] = useState(false);
+  const [up, setUp] = useState(false);
   const deletePlan = usePlanStore((state) => state.actions.deletePlan);
 
-  const onDoubleClick = () => setEdit((editPrev) => !edit);
+  const onDoubleClick = (event: React.MouseEvent) => {
+    console.log(event.clientX, event.clientY);
+    setEdit((editPrev) => !edit);
+  };
+  const onMouseDown = () => {
+    setDown(true);
+    console.log("down", down);
+  };
 
+  const onMouseUp = () => {
+    setDown(false);
+    console.log("up", down);
+  };
   const closeWinwod = () => {
     setEdit((editPrev) => !edit);
   };
@@ -29,9 +42,10 @@ export const PlanCard = memo(({ plan, index }: PlanCardPropd) => {
 
   return (
     <Draggable draggableId={plan.id} key={plan.id} index={index}>
-      {(provided) => (
+      {(provided, snapshot) => (
         <div
-          className="planCard"
+          id="data-test-card"
+          className={snapshot.isDragging ? "planCardDown" : "planCard"}
           onDoubleClick={onDoubleClick}
           {...provided.dragHandleProps}
           {...provided.draggableProps}

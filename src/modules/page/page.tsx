@@ -5,6 +5,7 @@ import { useState } from "react";
 
 import { DayOptions } from "../Types";
 import { Plan } from "../plan/core/Plan";
+import { Statuses } from "../Statuses/Statuses";
 
 export const Page = () => {
   const [planList, setPlan] = useState<Plan[]>([]);
@@ -25,11 +26,7 @@ export const Page = () => {
       </div>
       <div className="page__kanban">
         <div className="page__kanban-settings">
-          <div>Evaluation</div>
-          <div>Evaluation today</div>
-          <div>Documents</div>
-          <div>Work</div>
-          <div>Thinking</div>
+          <Statuses />
         </div>
         <div className="page__kanban-days">
           {dayArr.map((day) => (

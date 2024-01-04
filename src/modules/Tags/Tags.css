@@ -1,0 +1,19 @@
+.tags {
+  display: flex;
+  gap: 30px;
+  margin-left: 32px;
+  height: 100%;
+  width: 100%;
+}
+
+.tags__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tags__item:hover {
+  border-bottom: 4px #4d66c3 solid;
+}
